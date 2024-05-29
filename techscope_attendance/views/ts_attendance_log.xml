@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="ts_attendance_log_tree_view" model="ir.ui.view">
+        <field name="name">ts.attendance.log.tree.view</field>
+        <field name="model">ts.attendance.log</field>
+        <field name="arch" type="xml">
+            <tree string="ORDERS" editable="bottom">
+                <field name="employee_id"/>
+                <field name="employee_code"/>
+                <field name="device_id"/>
+                <field name="punch_type"/>
+                <field name="attendance_type"/>
+                <field name="punching_time"/>
+                <field name="attendance_line_id"/>
+                <field name="hash_code"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_ts_attendance_log_temp_tree" model="ir.ui.view">
+        <field name="name">ts.attendance.log.temp.form.view</field>
+        <field name="model">ts.attendance.log.temp</field>
+        <field name="arch" type="xml">
+            <tree string="Attendance Log Temp">
+
+                <button string="Move to Main" type="object"
+                        name="button_move_to_main"
+                        class="oe_highlight"/>
+
+            </tree>
+        </field>
+    </record>
+    <record id="ts_attendance_log_act_temp" model="ir.actions.act_window">
+        <field name="type">ir.actions.act_window</field>
+        <field name="name">Attendance Log Temp</field>
+        <field name="res_model">ts.attendance.log.temp</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+
+    =
+
+
+    <record id="ts_attendance_log_act" model="ir.actions.act_window">
+        <field name="type">ir.actions.act_window</field>
+        <field name="name">Attendance Log</field>
+        <field name="res_model">ts.attendance.log</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <menuitem
+            id="ts_attendance_log_menu_temp"
+            name="Attendance Log Temp"
+            action="ts_attendance_log_act_temp"
+            parent="hr_attendance.menu_hr_attendance_root"
+            sequence="20"
+    />
+
+    <menuitem
+            id="ts_attendance_log_menu"
+            name="Attendance Log"
+            action="ts_attendance_log_act"
+            parent="hr_attendance.menu_hr_attendance_root"
+            sequence="21"
+    />
+
+
+</odoo>
