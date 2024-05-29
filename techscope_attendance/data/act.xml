@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="action_server_calculat_attendance" model="ir.actions.server">
+            <field name="name">Calculat Attendance</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_ts_attendance_log" />
+            <field name="binding_model_id" ref="model_ts_attendance_log" />
+            <field name="state">code</field>
+            <field name="code">model.process_data()</field>
+        </record>
+        <record id="action_server_get_tepm_data" model="ir.actions.server">
+            <field name="name">Process Temp. Data</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_ts_attendance_log" />
+            <field name="binding_model_id" ref="model_ts_attendance_log" />
+            <field name="state">code</field>
+            <field name="code">model.fetch_data_from_temp()</field>
+        </record>
+
+   
+    </data>
+</odoo>
