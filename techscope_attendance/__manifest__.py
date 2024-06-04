@@ -13,7 +13,7 @@
     'website': "http://techscopeco.com/",
 
     'category': 'eCommerce',
-    'version': '16.0.1.1.0',
+    'version': '17.0.1.1.0',
 
     'depends': ['hr_attendance', ],
 
