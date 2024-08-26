@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="mail_template_reminder_contract_hr_manager" model="mail.template">
+            <field name="name">Contract: Reminder HR Manager</field>
+            <field name="model_id" ref="fx_hr_contract_reminder.model_hr_contract"/>
+            <field name="subject">HR Contract Reminder</field>
+            <field name="email_from">{{ ctx.get('email_from') }}</field>
+            <field name="email_to">{{ ctx.get('email_to') }}</field>
+            <field name="body_html" type="html">
+                <table border="0" cellpadding="0" cellspacing="0" style="width:100%; margin:0px auto;"><tbody>
+                    <tr><td valign="top" style="text-align: left; font-size: 14px;">
+                        Dear <strong><t t-esc="ctx.get('hr_manager_contract_id')"/></strong>,<br/><br/>
+                        Contracts of the following employees will expire soon:<br/>
+                        <ul>
+                            <t t-foreach="ctx.get('contracts')" t-as="contract_name">
+                                <li><t t-esc="contract_name"/></li>
+                            </t>
+                        </ul><br/>
+                        Please contact them to review their contracts<br/><br/>
+                        Best regards<br/><br/>
+                        <t t-esc="ctx.get('company_name')"></t>
+                    </td></tr>
+                </tbody></table>
+            </field>
+            <field name="lang">{{ object.employee_id.lang }}</field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <record id="mail_template_reminder_contract_employee" model="mail.template">
+            <field name="name">Contract: Reminder</field>
+            <field name="model_id" ref="fx_hr_contract_reminder.model_hr_contract"/>
+            <field name="subject">Employee Contract Reminder</field>
+            <field name="email_from">{{ ctx.get('email_from') }}</field>
+            <field name="email_to">{{ ctx.get('email_to') }}</field>
+            <field name="body_html" type="html">
+                <table border="0" cellpadding="0" cellspacing="0" style="width:100%; margin:0px auto;"><tbody>
+                    <tr><td valign="top" style="text-align: left; font-size: 14px;">
+                        Dear <strong><t t-esc="ctx.get('employee_name')"/></strong>,<br/><br/>
+                        Your contract will expire on <t t-esc="ctx.get('contract_date')"/><br/>
+                        Please contact your manager to review your contract<br/><br/>
+                        Best regards<br/><br/>
+                        <t t-esc="ctx.get('company_name')"></t>
+                    </td></tr>
+                </tbody></table>
+            </field>
+            <field name="lang">{{ object.employee_id.lang }}</field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>HR Contract Reminder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>HR Contract Reminder</h1>
+    <p>
+        This Odoo module provides functionality to send reminders for expiring HR contracts. It allows you to configure
+        the number of days before contract expiration to send the reminder, and the HR manager who will receive the
+        notifications.
+    </p>
+    <p>
+        Key features:
+    </p>
+    <ul>
+        <li>Automatically send email reminders to the HR manager and employees for contracts that are about to expire.
+        </li>
+        <li>Configure the number of days before expiration to send the reminder.</li>
+        <li>Select the HR manager user who will receive the notifications.</li>
+        <li>Customizable email templates for the reminders.</li>
+    </ul>
+    <h2>Screenshots</h2>
+    <h3>Settings Configuration</h3>
+    <img src="./config.png" alt="Settings Configuration">
+    <p>In the "Contract Reminder" section, you can set the following:</p>
+    <ul>
+        <li><strong>Contract Expiration Reminder</strong>: Set the number of days before the contract expiration date
+            when the reminder should be sent.</li>
+        <li><strong>HR Manager</strong>: Select the user who will be designated as the HR Manager to receive
+            notifications/reminders about expiring contracts.</li>
+    </ul>
+    <h3>Outgoing Mail Server Configuration</h3>
+    <img src="./config_mail_server.png" alt="Outgoing Mail Server Configuration">
+    <p>Go to the "Technical" settings, expand the "Email" section, and select "Outgoing Mail Servers". Here, you can
+        enter the details of your SMTP server, such as the server address, port, authentication credentials, and other
+        settings required for Odoo to send emails successfully.
+    </p>
+    <h3>Email Reminder for HR Manager</h3>
+    <img src="./mail_hr_manager.png" alt="Email Reminder Template">
+    <p>This template lists the
+        employees whose contracts are about to expire, along with their contract expiration dates. The HR manager can
+        then follow up with these employees to review their contracts.</p>
+    <h3>Email Reminder for Employee</h3>
+    <img src="./mail_employee.png" alt="Email Reminder Template">
+    <p>This template is for the employee whose contract are about to expire, along with their contract expiration dates.
+    </p>
+</body>
+
+</html>
