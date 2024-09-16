@@ -1,6 +1,6 @@
 {
     'name': 'Cancel Stock Moves',
-    'version': '16.0',
+    'version': '16.0.1.0.1',
     'category': 'Warehouse',
     'summery': 'Simple to refuse or cancel stock moves.',
     'author': 'INKERP',
