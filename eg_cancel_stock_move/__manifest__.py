@@ -5,7 +5,7 @@
     'summery': 'Simple to refuse or cancel stock moves.',
     'author': 'INKERP',
     'website': "https://www.INKERP.com",
-    'depends': ['stock'],
+    'depends': ['stock' ],
 
     'data': [
             'views/stock_move_view.xml'
